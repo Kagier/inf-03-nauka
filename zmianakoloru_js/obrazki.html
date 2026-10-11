@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+
+
+<main>
+    <section class="blok1">
+        <img src="pszczola.jpg" alt="pszczoła na fioletowym kwiatku" id="pszczola"> <br>
+
+
+        <label for="Blur">Blur</label>
+        <input type="radio" name="przczola" id="Blur"> <br>
+
+        <label for="Sepia">Sepia</label>
+        <input type="radio" name="przczola" id="Sepia"> <br>
+
+        <label for="Negatyw">Negatyw</label>
+        <input type="radio" name="przczola" id="Negatyw"> <br>
+
+        <button type="button" onclick="skrypt1()">Zastosuj</button>
+    </section>
+
+
+    <section class="blok2">
+        <img src="pomarancza.jpg" alt="drzewo pomarańczy" id="pomarancza"> <br>
+
+        <button type="button" onclick="kolor1()">Kolorowy</button>
+        <button type="button" onclick="kolor2()">Czarno-biały</button>
+    </section>
+
+    <section class="blok3">
+        <img src="owoce.jpg" alt="Kosz pełen owoców" id="owoce">
+
+        <input type="range" name="suwak" id="suwak1" min="0" max="100" value="100"> <br>
+
+        <button type="button" onclick="skrypt4()">Zastosuj</button>
+    </section>
+    
+    <section class="blok4">
+        <img src="zolw.jpg" alt="Żółw w wodzie" id="zolw">
+        <input type="range" name="suwak2" id="suwak2" min="0" max="250">  <br>
+        <button type="button" onclick="skrypt5()">Zastosuj</button>
+    </section>
+</main>    
+
+    <footer>
+        <p><a href="http://www.css.com/" target="_blank">Zobacz inne efekty obrazu</a></p>
+        <p>Stronę wykonał: 12345678901</p>
+    </footer>
+
+    <script>
+        function skrypt1() {
+            var pszczola = document.getElementById("pszczola");
+
+            var Blur = document.getElementById("Blur");
+
+            var Sepia = document.getElementById("Sepia");
+
+            var Negatyw = document.getElementById("Negatyw");
+
+            if (Blur.checked) {
+                pszczola.style.filter = "blur(6px)";
+            }
+
+            if (Sepia.checked) {
+                pszczola.style.filter = "sepia(100%)";
+            }
+
+            if (Negatyw.checked) {
+                pszczola.style.filter = "invert(100%)";
+            }
+          
+        }
+
+
+        function kolor1() {
+            var pomarancza = document.getElementById("pomarancza");
+            pomarancza.style.filter = "none";
+        }
+
+        function kolor2() {
+            var pomarancza = document.getElementById("pomarancza");
+            pomarancza.style.filter = "grayscale(100%)";
+        }
+
+        function  skrypt4() {
+            var owoce = document.getElementById("owoce");
+            var suwak1 = document.getElementById("suwak1");
+
+            owoce.style.filter = "opacity(" + suwak1.value + "%)"
+        }
+
+        function  skrypt5() {
+            var zolw = document.getElementById("zolw");
+            var suwak2 = document.getElementById("suwak2");
+
+            zolw.style.filter = "brightness(" + suwak2.value + "%)"
+        }
+
+
+
+    </script>
+</body>
+</html>

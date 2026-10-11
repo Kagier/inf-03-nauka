@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="[pl]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatuaże</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div class="calychuj">
+        <div class="prawychuj">
+
+    <header class="header1">
+        <img src="logo.png" alt="salon">
+    </header>
+
+    <aside>
+        <h3>Dodaj wzór</h3> <br>
+        <label for="wzor">Wzór</label> <br>
+        <input type="file" name="wzor" id="wzor" accept=".png"> <br>
+
+        <label for="kolor">Kolor</label>
+        <select id="kolor">
+            <option value="Czarny">Czarny</option>
+            <option value="Czerwony">Czerwony</option>
+            <option value="Zielony">Zielony</option>
+            <option value="Niebieski">Niebieski</option>
+        </select> <br>
+
+        <label for="cena">cena</label>
+        <input type="number" name="cena" id="cena"> <br>
+        
+        <button type="button" onclick="skrypt1()">Dodaj Wzór</button>
+    </aside>
+    </div>
+
+
+    <div class="lewychuj">
+    <header class="header1">
+        <h1>Studio tatuażu</h1>
+    </header>
+    <section id="galeria">
+        <h2>Galeria</h2>
+        <img class="miniatury" src="smok.png" alt="smok.png">
+        <img class="miniatury" src="koliber.png" alt="koliber.png">
+    </section>
+    </div>
+    </div>
+
+    <footer>
+        <p>Autor strony: 12345678901</p>
+    </footer>
+
+    <script>
+        function skrypt1() {
+            var zdjecie = document.getElementById("wzor");
+
+            var kolor = document.getElementById("kolor").value;
+
+            var cena = document.getElementById("cena").value;
+
+            let filename = zdjecie.value.split('\\').pop();
+
+            alert(`Wzór: ${filename}, kolor ${kolor} w cenie ${cena} zł`)
+
+            var img = document.createElement('img');
+            img.src = filename;
+            img.alt = filename;
+            img.className = 'miniatury';
+
+            document.getElementById("galeria").appendChild(img);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+* {
+    font-family: century;
+    text-align: center;
+}
+
+/* body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+header, footer {
+    background-color: Indigo;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    clear: both;
+}
+
+section {
+    width: 50%;
+    height: 470px;
+    float: left;
+}
+
+img {
+    padding: 3px;
+    margin: 10px;
+    border: 2px dashed slateblue;
+}
+a {
+    color: white;
+}
+
+button {
+    background-color: slateblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: indigo;
+}
+
+input[type="range"] {
+    width: 80%;
+}

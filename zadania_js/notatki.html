@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planer zadań</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <aside>
+        <img src="obraz.jpg" alt="notatki">
+    </aside>
+
+
+        <header>
+            <h2>Moje zadania</h2>
+        </header>
+
+        <nav>
+            <input type="text" name="zadanie" id="zadanie" placeholder="Dodaj zadanie...">
+            <button type="button" onclick="dodaj()">Dodaj</button>
+        </nav>
+
+        <main>
+            <ul id="lista">
+                <li>Wyprowadzić psa <button type="button" onclick="wykonanko(this)">Wykonano</button></li>
+                <li>Gimnastyka <button type="button" onclick="wykonanko(this)">Wykonano</button></li>
+                <li>Zakupy <button type="button" onclick="wykonanko(this)">Wykonano</button></li>
+                <li>Spacer z kumplem <button type="button" onclick="wykonanko(this)">Wykonano</button></li>
+                <li>Odrabianie lekcji z młodszą siostrą <button type="button" onclick="wykonanko(this)">Wykonano</button></li>
+                <li>Projekt na geografię <button type="button" onclick="wykonanko(this)">Wykonano</button></li>
+            </ul>
+
+            
+        </main>
+        <footer>
+            <h3>Notatki: 12345678901</h3>
+        </footer>
+
+        <script>
+
+            function wykonanko(klikniety) {
+                var elementListy = klikniety.parentElement
+                elementListy.style = "text-decoration: line-through"
+            }           
+            
+
+
+
+            function dodaj() {
+                var lista = document.getElementById("lista");
+                var zadanie = document.getElementById("zadanie");
+                var nowyElementListy = document.createElement("li");
+                nowyElementListy.innerHTML = `${zadanie.value}<button type="button" onclick="wykonanko(this)">Wykonano</button>`;
+                lista.appendChild(nowyElementListy);
+                }
+        </script>
+</body>
+</html>
